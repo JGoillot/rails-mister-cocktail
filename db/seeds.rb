@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Seed delete"
 Ingredient.destroy_all
+
+puts "Seed Starting"
 
 ingredients = [
 'Angostura Bitter',
@@ -70,4 +73,5 @@ ingredients = [
 
 ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
 
+puts "Seed Finish"
 
