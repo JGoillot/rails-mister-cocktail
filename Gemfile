@@ -27,6 +27,7 @@ gem 'cloudinary', '1.1.0'
 # Upload image
 gem "attachinary", "1.3.1"
 gem "jquery-fileupload-rails"
+gem "responders"
 
 
 
