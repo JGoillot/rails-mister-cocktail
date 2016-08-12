@@ -1,0 +1,22 @@
+
+<div class="cocktail-header">
+  <%= image_tag("http://loremflickr.com/150/150/#{@cocktail.name},cocktail, drink/all",  alt: "#{@cocktail.name}", class: "cocktail-img") %>
+  <h2><%= @cocktail.name %></h2>
+</div>
+
+<% @cocktail.doses.each do |dose| %>
+
+
+  <div class='dose-body'>
+    <h3><%= dose.ingredient.name %></h3>
+    <p><%= dose.description %> <%= link_to "", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash font-small" %></p>
+  </div>
+<% end %>
+<%= link_to "View all cocktails", cocktails_path, class: "btn btn-secondary" %>
+
+
+<div class="form-dose">
+<%= render "doses/new", cocktail: @cocktail, dose: @dose, ingredients: @ingredients %>
+</div>
+
+<br>
