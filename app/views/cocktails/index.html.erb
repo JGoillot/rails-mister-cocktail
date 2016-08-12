@@ -1,21 +1,18 @@
+
 <% @cocktails.each do |cocktail| %>
 
-<%= link_to cocktail_path(cocktail) do %>
-
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("http://loremflickr.com/150/150/<%= cocktail.name %>,cocktail, drink/all");">
-  <div class="card-category">Cocktail</div>
-  <div class="card-description">
-    <h2><%= cocktail.name %></h2>
-    <% cocktail.ingredients.each do |ingredient| %>
-    <p><%= ingredient.name %></p>
-    <% end %>
-  </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
-</div>
-
-<% end %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail_image(cocktail.photos.first)%>);">
+      <div class="card-category">Cocktail</div>
+      <div class="card-description">
+        <h2><%= cocktail.name %></h2>
+        <% cocktail.ingredients.each do |ingredient| %>
+        <p><%= ingredient.name %></p>
+        <% end %>
+      </div>
+      <img class="card-user avatar" src="user.jpg">
+      <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+    </div>
 <% end %>
 
 
-<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary", data: { turbolinks: "false" } %>

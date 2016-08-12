@@ -22,6 +22,12 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 # Add secret token
 gem 'figaro'
+# Gestion d'image
+gem 'cloudinary', '1.1.0'
+# Upload image
+gem "attachinary", "1.3.1"
+gem "jquery-fileupload-rails"
+
 
 
 # Use jquery as the JavaScript library
