@@ -20,6 +20,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+# Add secret token
+gem 'figaro'
 
 
 # Use jquery as the JavaScript library
