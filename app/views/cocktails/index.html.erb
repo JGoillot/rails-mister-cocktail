@@ -1,18 +1,25 @@
 
+
+<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary", data: { turbolinks: "false" } %>
+
 <% @cocktails.each do |cocktail| %>
 
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail_image(cocktail.photos.first)%>);">
       <div class="card-category">Cocktail</div>
       <div class="card-description">
         <h2><%= cocktail.name %></h2>
-        <% cocktail.ingredients.each do |ingredient| %>
-        <p><%= ingredient.name %></p>
-        <% end %>
+        <p><% cocktail.ingredients.each do |ingredient| %>
+        <%= ingredient.name.upcase %> |
+        <% end %></p>
       </div>
-      <img class="card-user avatar" src="user.jpg">
+      <div class="card-user">
+        <div class="badge-container">
+          <i class="fa fa-glass"></i>
+          <div class="badge badge-blue"><%= cocktail.ingredients.count %></div>
+        </div>
+      </div>
       <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
     </div>
 <% end %>
 
 
-<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary", data: { turbolinks: "false" } %>

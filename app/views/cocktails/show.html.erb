@@ -1,23 +1,22 @@
+<% content_for :title, "#{@cocktail.name} | Mister Cocktail" %>
 
-<div class="cocktail-header">
-  <% @cocktail.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-  <% end %>
-
-
-
-  <h2><%= @cocktail.name %></h2>
+<div class="text-center">
+<div class="cocktail-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(@cocktail.photos.first.path, :width => 300, :height => 200, :crop => :fill) %>);">
+  <div>
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
 </div>
 
 <% @cocktail.doses.each do |dose| %>
 
 
   <div class='dose-body'>
-    <h3><%= dose.ingredient.name %></h3>
+    <h3><%= dose.ingredient.name.upcase %></h3>
     <p><%= dose.description %> <%= link_to "", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash font-small" %></p>
   </div>
 <% end %>
-<%= link_to "View all cocktails", cocktails_path, class: "btn btn-secondary" %>
+<%= link_to "View all cocktails", cocktails_path, class: "btn btn-primary" %>
 
 
 <div class="form-dose">

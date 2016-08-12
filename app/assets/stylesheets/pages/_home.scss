@@ -3,13 +3,15 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+ body {
+  background-color: #ECEFF1;
+ }
+
 .form-dose {
   padding-top: 45px;
 }
 
-.cocktail-header {
-  padding-top: 28px;
-}
+
 
 .cocktail-img {
   border-radius: 50%;

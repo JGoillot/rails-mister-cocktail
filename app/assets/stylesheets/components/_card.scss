@@ -4,6 +4,8 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  margin-top: 11px;
+  border-radius: 3px;
 }
 .card-user {
   position: absolute;
@@ -34,11 +36,23 @@
   bottom: 0;
   width: 100%;
   z-index:2;
-  background: black;
+  background: white;
   opacity: 0;
   left: 0;
 
 }
 .card-link:hover{
   opacity: 0.1;
+}
+
+.cocktail-header {
+  padding-top: 28px;
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  font-size: 72px;
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-top: 25px;
+  border-radius: 3px;
 }
