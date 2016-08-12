@@ -1,7 +1,7 @@
 <% content_for :title, "#{@cocktail.name} | Mister Cocktail" %>
 
 <div class="text-center">
-<div class="cocktail-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(@cocktail.photos.first.path, :width => 300, :height => 200, :crop => :fill) %>);">
+<div class="cocktail-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail_image(@cocktail.photos.first) %>);">
   <div>
     <h1><%= @cocktail.name %></h1>
   </div>
@@ -16,7 +16,7 @@
     <p><%= dose.description %> <%= link_to "", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash font-small" %></p>
   </div>
 <% end %>
-<%= link_to "View all cocktails", cocktails_path, class: "btn btn-primary" %>
+<%= link_to "View all cocktails", cocktails_path, class: "btn btn-primary btn-top" %>
 
 
 <div class="form-dose">
